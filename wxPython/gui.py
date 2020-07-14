@@ -17,7 +17,7 @@ import wx.xrc
 class MyWindow_1 ( wx.Frame ):
 
 	def __init__( self, parent ):
-		wx.Frame.__init__ ( self, parent, id = wx.ID_ANY, title = wx.EmptyString, pos = wx.DefaultPosition, size = wx.Size( 513,407 ), style = wx.DEFAULT_FRAME_STYLE|wx.TAB_TRAVERSAL )
+		wx.Frame.__init__ ( self, parent, id = wx.ID_ANY, title = u"ROT13 - UmarYusuf.com", pos = wx.DefaultPosition, size = wx.Size( 513,407 ), style = wx.DEFAULT_FRAME_STYLE|wx.TAB_TRAVERSAL )
 
 		self.SetSizeHints( wx.DefaultSize, wx.DefaultSize )
 
@@ -37,7 +37,7 @@ class MyWindow_1 ( wx.Frame ):
 
 		bSizer1.Add( self.outText, 1, wx.ALL|wx.EXPAND, 5 )
 
-		self.copy_btn = wx.Button( self, wx.ID_ANY, u"Copy", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.copy_btn = wx.Button( self, wx.ID_ANY, u"Copy To Clipboard", wx.DefaultPosition, wx.DefaultSize, 0 )
 		bSizer1.Add( self.copy_btn, 0, wx.ALL|wx.ALIGN_RIGHT, 5 )
 
 
