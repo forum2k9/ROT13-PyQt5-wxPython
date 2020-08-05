@@ -23,7 +23,7 @@ class MyWindow_1 ( wx.Frame ):
 
 		bSizer1 = wx.BoxSizer( wx.VERTICAL )
 
-		self.inText = wx.TextCtrl( self, wx.ID_ANY, u"Enter text...", wx.DefaultPosition, wx.DefaultSize, wx.TE_MULTILINE )
+		self.inText = wx.TextCtrl( self, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, wx.TE_MULTILINE )
 		self.inText.SetFont( wx.Font( 15, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, wx.EmptyString ) )
 		self.inText.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOWTEXT ) )
 
@@ -47,9 +47,8 @@ class MyWindow_1 ( wx.Frame ):
 		self.Centre( wx.BOTH )
 
 		# Connect Events
-		self.inText.Bind( wx.EVT_TEXT_ENTER, self.generate_rot13_func )
+		self.inText.Bind( wx.EVT_TEXT, self.generate_rot13_func )
 		self.rot13_btn.Bind( wx.EVT_BUTTON, self.generate_rot13_func )
-		self.outText.Bind( wx.EVT_TEXT, self.copy_func )
 		self.copy_btn.Bind( wx.EVT_BUTTON, self.copy_func )
 
 	def __del__( self ):
@@ -63,6 +62,5 @@ class MyWindow_1 ( wx.Frame ):
 
 	def copy_func( self, event ):
 		event.Skip()
-
 
 

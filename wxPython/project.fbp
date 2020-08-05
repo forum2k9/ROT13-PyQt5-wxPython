@@ -117,11 +117,11 @@
                         <property name="validator_style">wxFILTER_NONE</property>
                         <property name="validator_type">wxDefaultValidator</property>
                         <property name="validator_variable"></property>
-                        <property name="value">Enter text...</property>
+                        <property name="value"></property>
                         <property name="window_extra_style"></property>
                         <property name="window_name"></property>
                         <property name="window_style"></property>
-                        <event name="OnTextEnter">generate_rot13_func</event>
+                        <event name="OnText">generate_rot13_func</event>
                     </object>
                 </object>
                 <object class="sizeritem" expanded="1">
@@ -259,7 +259,6 @@
                         <property name="window_extra_style"></property>
                         <property name="window_name"></property>
                         <property name="window_style"></property>
-                        <event name="OnText">copy_func</event>
                     </object>
                 </object>
                 <object class="sizeritem" expanded="1">
