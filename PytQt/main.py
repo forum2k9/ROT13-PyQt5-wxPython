@@ -11,7 +11,7 @@ class MyWindow(QMainWindow):
 		super(MyWindow, self).__init__()
 		uic.loadUi('rot13_gui.ui', self)
 
-		# ----- Connect Widgets Start ----
+		# ----- Connect Widgets Start (Connect Events in wxPython) ----
 		# self.NAME-OF-WIDGET.clicked.connect(self.FUNCTION-TO-EXECUTE)
 		self.rot13_Button.clicked.connect(self.generate_rot13_func)
 		self.in_textEdit.textChanged.connect(self.generate_rot13_func)
