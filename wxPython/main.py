@@ -25,6 +25,9 @@ class MyWindow_2(MyWindow_1):
 	def copy_func(self, event):
 		print('copy_func...')
 
+		# Copy to clipboard...
+		self.outText.SetFocus()
+		self.outText.SelectAll()	
 		self.outText.Copy()
 
 

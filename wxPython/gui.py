@@ -47,6 +47,7 @@ class MyWindow_1 ( wx.Frame ):
 		self.Centre( wx.BOTH )
 
 		# Connect Events
+		self.inText.Bind( wx.EVT_TEXT_ENTER, self.generate_rot13_func )
 		self.rot13_btn.Bind( wx.EVT_BUTTON, self.generate_rot13_func )
 		self.outText.Bind( wx.EVT_TEXT, self.copy_func )
 		self.copy_btn.Bind( wx.EVT_BUTTON, self.copy_func )
@@ -58,6 +59,7 @@ class MyWindow_1 ( wx.Frame ):
 	# Virtual event handlers, overide them in your derived class
 	def generate_rot13_func( self, event ):
 		event.Skip()
+
 
 	def copy_func( self, event ):
 		event.Skip()

@@ -16,21 +16,38 @@ class MyWindow(QMainWindow):
 		self.rot13_Button.clicked.connect(self.generate_rot13_func)
 		self.in_textEdit.textChanged.connect(self.generate_rot13_func)
 
+		self.copy_Button.clicked.connect(self.copy_func)
 		# ----- Connect Widgets End ----
 
 		self.show()
 		
 
 	def generate_rot13_func(self):
-		print('generate_rot13_func CLICKED')
+		# print('generate_rot13_func CLICKED')
 
+		raw_text = self.in_textEdit.toPlainText()
+
+		# Using Python String method: maketrans() that returns a mapping table for translation usable for translate() method.
+		rot13trans = str.maketrans('ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz', 'NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm')
+		rot13_result = raw_text.translate(rot13trans)
+
+		self.out_textEdit.setPlainText(rot13_result)
+
+
+
+
+	def copy_func(self, event):
+		# print('copy_func...')
+
+		# Copy to clipboard...
+		self.out_textEdit.selectAll()
+		self.out_textEdit.copy()
 
 
 if __name__ == '__main__':
 	app = QApplication(sys.argv)
 	window = MyWindow()
 	sys.exit(app.exec_())
-
 
 
 
