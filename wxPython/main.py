@@ -11,7 +11,12 @@ class MyWindow_2(MyWindow_1):
 	def generate_rot13_func(self, event):
 		# print('generate_rot13_func...')
 		raw_text = self.inText.GetValue()
-		self.outText.SetValue(raw_text)
+
+		# Using Python String method: maketrans() that returns a mapping table for translation usable for translate() method.
+		rot13trans = str.maketrans('ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz', 'NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm')
+		rot13_result = raw_text.translate(rot13trans)
+
+		self.outText.SetValue(rot13_result)
 
 
 
